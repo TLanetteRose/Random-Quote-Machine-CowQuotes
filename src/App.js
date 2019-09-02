@@ -1,39 +1,61 @@
 import React, { Component } from 'react';
+import { random } from 'lodash';
 import './App.css';
-import  Navbar  from 'react-bootstrap/Navbar';
-import  Container  from 'react-bootstrap/Container';
-import  Row from 'react-bootstrap/Row';
-import  Col from 'react-bootstrap/Col'
-import Button from './component/Button';
+import QuoteMachine from './component/QuoteMachine';
 
 
 
 
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      quotes: [],
+      selectedQuoteIndex: null,
+    }
+    this.assignNewQuoteIndex = this.assignNewQuoteIndex.bind(this);
+    this.generateNewQuoteIndex = this.generateNewQuoteIndex.bind(this);
+  }
+
+  componentDidMount() {
+    fetch('https://gist.githubusercontent.com/TLanetteRose/cbb344a12b2586a070d1f3fa2fe02414/raw/bd6cdd24425bd0db124d05f6662dbe2a5e6fa0fc/cowquotes.json')
+      .then(data => data.json())
+      .then(quotes => this.setState({ quotes }, this.assignNewQuoteIndex));
+      
+  }
+
+  get selectedQuote () {
+    if (!this.state.quotes.length || !Number.isInteger(this.state.selectedQuoteIndex)){
+      return undefined;
+    }
+    return this.state.quotes[this.state.selectedQuoteIndex];
+  }
+
+/**
+* Returns an integer representing an index in state.quotes
+* If state.quotes is empty, returns undefined
+*/
+
+  generateNewQuoteIndex() {
+    if(!this.state.quotes.length) {
+      return undefined;
+    }
+    return random(0, this.state.quotes.length - 1);
+  }
+
+  assignNewQuoteIndex() {
+    this.setState({ selectedQuoteIndex: this.generateNewQuoteIndex() });
+  } //Method for new quote
+
+
+
+
   render() {
     return (
-      <React.Fragment> 
-          <header id="header" className="mb-3">
-            <Navbar bg="dark">
-              <Container>
-                <h1 id="title">Rebel-Cow Random Quote Machine</h1>
-              </Container>
-            </Navbar>
-          </header>
 
-          <Container>
-            <Row className="justify-content-center">
-              <Col sm={11} lg={8}>
-                <div className="App mt-2 mx-auto py-3" id="quote-box">
-                  <Button buttonDisplayName="New Quote" />
-                </div>
-              </Col>
-            </Row>    
-          </Container>
-       
-      </React.Fragment>
-     
+        <QuoteMachine selectedQuote={this.selectedQuote} assignNewQuoteIndex={this.assignNewQuoteIndex} />
     );
   }
 }
