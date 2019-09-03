@@ -32,4 +32,4 @@ const QuoteMachine = ({ assignNewQuoteIndex, selectedQuote }) => (
     </React.Fragment>
 );
 
-export default QuoteMachine
+export default QuoteMachine;
