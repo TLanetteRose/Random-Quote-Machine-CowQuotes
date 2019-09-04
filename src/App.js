@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import { random } from 'lodash';
 import './App.css';
-/*import  Navbar  from 'react-bootstrap/Navbar';
-import  Container  from 'react-bootstrap/Container';
-import  Row from 'react-bootstrap/Row';
-import  Col from 'react-bootstrap/Col'
-import Button from 'react-bootstrap/Button';*/
 import QuoteMachine from './component/QuoteMachine';
 
 
@@ -58,7 +53,7 @@ assignNewQuoteIndex() {
   render() {
     console.log(this.state.selectedQuoteIndex);
     return (
-      <div id="quote-box">
+      <div>
 
         {
           this.selectedQuote ?
