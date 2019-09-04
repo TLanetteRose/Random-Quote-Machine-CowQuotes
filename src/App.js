@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import { random } from 'lodash';
 import './App.css';
-import Button from './component/Button';
+/*import  Navbar  from 'react-bootstrap/Navbar';
+import  Container  from 'react-bootstrap/Container';
+import  Row from 'react-bootstrap/Row';
+import  Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button';*/
 import QuoteMachine from './component/QuoteMachine';
+
 
 
 class App extends Component {
@@ -12,8 +17,9 @@ class App extends Component {
       quotes: [],
       selectedQuoteIndex: null,
     }
-    this.selectQuoteIndex = this.selectQuoteIndex.bind(this);
     this.assignNewQuoteIndex = this.assignNewQuoteIndex.bind(this);
+    this.generateNewQuoteIndex = this.generateNewQuoteIndex.bind(this);
+    
   }
 
   //Using fetch to request JSON Gist with quotes
@@ -33,7 +39,11 @@ get selectedQuote() {
 
 
 //Use Lodash library for random function
-selectQuoteIndex() {
+/**
+* Returns an integer representing an index in state.quotes
+* If state.quotes is empty, returns undefined
+*/
+generateNewQuoteIndex() {
   if(!this.state.quotes.length){
     return undefined;
   }
@@ -42,16 +52,20 @@ selectQuoteIndex() {
 
 //Method sets state to randomly quote index 
 assignNewQuoteIndex() {
-  this.setState({ selectedQuoteIndex: this.selectQuoteIndex() });
+  this.setState({ selectedQuoteIndex: this.generateNewQuoteIndex() });
 }
 
   render() {
     console.log(this.state.selectedQuoteIndex);
     return (
-      <div className="App" id="quote-box">
-        { this.selectedQuote ? `"${this.selectedQuote.quote}"  - ${this.selectedQuote.author}`: ''}
-        <Button buttonDisplayName="New Quote" clickHandler={this.assignNewQuoteIndex} />
+      <div id="quote-box">
+
+        {
+          this.selectedQuote ?
+          <QuoteMachine selectedQuote= {this.selectedQuote} assignNewQuoteIndex= {this.assignNewQuoteIndex}/> :
+          null
         }
+
       </div>
     );
   }
