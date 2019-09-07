@@ -34,8 +34,11 @@ html {
   height: 220px;
 }
 img {
-  width: 50%;
-  height: 80%;
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  height: auto;
+  
 }
 #footer {
   height: 100px;

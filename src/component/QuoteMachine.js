@@ -1,5 +1,4 @@
 import React, {Fragment} from 'react';
-import Img from 'react-image';
 import  Navbar  from 'react-bootstrap/Navbar';
 import  Container  from 'react-bootstrap/Container';
 import  Row from 'react-bootstrap/Row';
@@ -8,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 //import Image from 'react-bootstrap/Image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import QuoteImage from './QuoteImage.js';
 
 
 
@@ -39,9 +39,9 @@ const QuoteMachine = ({ assignNewQuoteIndex, selectedQuote }) => (
               </div>
             </Col>
           </Row>
-          <Row id="quote-image"className="justify-content-center mx-auto my-auto">
+      <Row id="quote-image" className="d-flex align-content-center">
             <Col sm={11} lg={8}>
-              const myComponent = () => <Img src="/Users/TLanPollard/Documents/GitHub/Random-Quote-Machine-CowQuotes/public/RebelCowV1.jpg" className="img-fluid" />
+          <QuoteImage className="justify-content-center"/>
             </Col>
           </Row>   
       </Container>

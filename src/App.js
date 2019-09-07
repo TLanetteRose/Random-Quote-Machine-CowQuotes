@@ -60,6 +60,7 @@ assignNewQuoteIndex() {
           <QuoteMachine selectedQuote= {this.selectedQuote} assignNewQuoteIndex= {this.assignNewQuoteIndex}/> :
           null
         }
+        
 
       </div>
     );
