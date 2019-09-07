@@ -22,9 +22,9 @@ const QuoteMachine = ({ assignNewQuoteIndex, selectedQuote }) => (
       <Container id="quote-box">
           <Row className="justify-content-center">
             <Col sm={11} lg={8}>
-              <div id="text">
+              <div id="text" className="mx-auto my-auto p-3">
                 {selectedQuote.quote} - <span id="author"> {selectedQuote.author}</span>
-                <div id="buttons">
+                <div id="buttons" className="p-4 d-flex justify-content-between mt-5">
                   <Button id="new-quote" variant="primary" size="lg" onClick={assignNewQuoteIndex}>New Quote</Button>
                   <Button id="tweet-quote"
                     target="_blank"
