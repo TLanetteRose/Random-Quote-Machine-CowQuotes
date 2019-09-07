@@ -39,9 +39,9 @@ const QuoteMachine = ({ assignNewQuoteIndex, selectedQuote }) => (
               </div>
             </Col>
           </Row>
-      <Row id="quote-image" className="d-flex align-content-center">
+      <Row id="quote-image" className="">
             <Col sm={11} lg={8}>
-          <QuoteImage className="justify-content-center"/>
+          <QuoteImage className=""/>
             </Col>
           </Row>   
       </Container>
