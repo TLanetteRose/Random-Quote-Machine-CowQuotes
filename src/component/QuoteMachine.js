@@ -56,7 +56,7 @@ const QuoteMachine = ({ assignNewQuoteIndex, selectedQuote }) => (
         id="quote-image"
         className="d-flex justify-content-center align-content-center mx-auto my-auto"
       >
-        <Col sm={11} lg={8}>
+        <Col sm={11} lg={8} className="d-flex justify-content-center">
           <QuoteImage className="align-content-center" />
         </Col>
       </Row>
@@ -64,10 +64,10 @@ const QuoteMachine = ({ assignNewQuoteIndex, selectedQuote }) => (
 
     <footer
       id="footer"
-      className="d-flex justify-content-center align-items-center">
+      className="d-flex justify-content-center align-items-center mb-0">
       <h5 id="designer">
         T.Lanette Pollard for{" "}
-        <a href="https://github.com/TLanetteRose">Rebel-Cow</a>
+        <a href="http://www.rebel-cow.com">Rebel-Cow</a>
       </h5>
     </footer>
   </Fragment>
