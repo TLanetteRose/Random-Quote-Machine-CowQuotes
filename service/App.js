@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react.js';
 import { random } from 'lodash';
 import './App.css';
 import QuoteMachine from './component/QuoteMachine';
