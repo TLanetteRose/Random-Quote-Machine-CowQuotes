@@ -61,15 +61,16 @@ const QuoteMachine = ({ assignNewQuoteIndex, selectedQuote }) => (
         </Col>
       </Row>
     </Container>
-
+    
     <footer
       id="footer"
-      className="d-flex justify-content-center align-items-center mb-0">
+      className="d-flex justify-content-center align-items-center">
       <h5 id="designer">
         T.Lanette Pollard for{" "}
         <a href="http://www.rebel-cow.com">Rebel-Cow</a>
       </h5>
     </footer>
+    
   </Fragment>
 );
 
