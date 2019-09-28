@@ -58,8 +58,8 @@ img {
   background-color: #504658 !important;
 }
 
-footer a:link {
-  color: indianred;
+footer a {
+  color: indianred !important;
 }
 
 /************** Media Queries *********/
