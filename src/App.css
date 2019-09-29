@@ -67,7 +67,41 @@ footer a {
   color: indianred !important;
 }
 
-/************** Media Queries *********/
+/* Media Queries */
+/*Small Tablets and Phones */
+
+@media screen and (max-width: 575.98px){
+  #quote-box {
+    margin-top: 50px;
+  }
+  #title {
+    font-size: 38px;
+  }
+  img {
+    width: 35%;
+  }
+  #text {
+    font-size: 18px;
+  }
+  #designer {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  #title {
+    font-size: 36px;
+  }
+  #quote-box {
+    margin-top: 50px;
+  }
+  img {
+    width: 35%;
+  }
+  #text {
+    font-size: 18px;
+  }
+}
 
 
 
